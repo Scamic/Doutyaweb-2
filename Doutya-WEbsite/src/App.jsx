@@ -1,23 +1,29 @@
-import NavBar from "./components/Nav"
-import HomePage from "./components/HomePage"
-import AboutUs from "./components/about"
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const App =() => {
+import NavBar from "./components/Nav";
+import HomePage from "./components/HomePage";
+import AboutUs from "./components/about";
+import ProductSection from './components/products'; 
 
-  return (
-    <div className="App">
-      
-      <NavBar />
-      <HomePage />
-      <AboutUs/>
-      
-      
-  
-  
-  
-    </div>
-    
-  )
-}
+const App = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: false, 
+        });
+    }, []);
 
-export default App
+    return (
+        <div className="App">
+            <NavBar />
+            <HomePage />
+            <AboutUs />
+            <ProductSection />
+        </div>
+    );
+};
+
+export default App;

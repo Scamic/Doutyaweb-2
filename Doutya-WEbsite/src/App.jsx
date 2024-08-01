@@ -6,6 +6,8 @@ import NavBar from "./components/Nav";
 import HomePage from "./components/HomePage";
 import AboutUs from "./components/about";
 import ProductSection from './components/products'; 
+import Blog from './components/Blog';
+import Footer from './components/Footer';
 
 const App = () => {
     useEffect(() => {
@@ -22,6 +24,8 @@ const App = () => {
             <HomePage />
             <AboutUs />
             <ProductSection />
+            <Blog />
+            <Footer />
         </div>
     );
 };

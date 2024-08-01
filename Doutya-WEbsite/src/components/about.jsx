@@ -9,7 +9,6 @@ const AboutUs = () => {
       </div>
 
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:justify-between relative">
-        {/* Left Section with Heading and Description */}
         <div className="w-full lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left ml-8">
           <h2 className="text-violet-800 text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 underline-animation">
             About Us

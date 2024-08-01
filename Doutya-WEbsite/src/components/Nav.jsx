@@ -17,7 +17,6 @@ const NavBar = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -25,9 +24,7 @@ const NavBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // Simulate a search action or integrate with actual search functionality
     alert(`Searching for: ${searchQuery}`);
-    // Add your search logic here
   };
 
   return (

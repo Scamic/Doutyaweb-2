@@ -3,11 +3,12 @@ import XtaartImage from '../assets/Xtaart.png';
 import XortlistImage from '../assets/Xortlist.png'; 
 import Doutya_RecruitImage from '../assets/Doutya_Recruit.png'; 
 import Doutya_EngageImage from '../assets/Doutya_Engage.png'; 
+
 // Sample product data
 const products = [
-    { id: 1, src: XtaartImage, alt: 'Product 1', name: 'Xtaart', description:' Xtaart is a cutting-edge career guidance platform designed specifically for students who are uncertain about their career paths, interests, and skills. This innovative platform aims to bridge the gap between self-discovery and career success.Xtaart primary objective is to provide personalized career guidance to students, empowering them to make informed decisions about their future. By leveraging advanced assessments and expert guidance, Xtaart helps students identify their strengths, passions, and skills, and aligns them with suitable career options.' },
-    { id: 2, src: XortlistImage, alt: 'Product 2', name: 'Xortlist', description: 'Xortlist is a innovative platform designed for students who have clear goals, dreams, and aspirations, but are struggling to find opportunities to achieve them. Xortlist bridges the gap between potential and opportunity, empowering students to turn their dreams into reality.Xortlist primary objective is to provide a platform for students to access resources, opportunities, and support, helping them overcome obstacles and achieve their goals.' },
-    { id: 3, src: Doutya_RecruitImage, alt: 'Product 3', name: 'Doutya Recruit', description: 'Doutya Recruit is a innovative recruitment platform that bridges the gap between students and their dream companies. By showcasing students potential and aspirations, Doutya Recruit enables companies to discover and connect with top talent, fostering meaningful relationships and successful career paths.'},
+    { id: 1, src: XtaartImage, alt: 'Product 1', name: 'Xtaart', description: 'Xtaart is a cutting-edge career guidance platform designed specifically for students who are uncertain about their career paths, interests, and skills. This innovative platform aims to bridge the gap between self-discovery and career success. Xtaart primary objective is to provide personalized career guidance to students, empowering them to make informed decisions about their future. By leveraging advanced assessments and expert guidance, Xtaart helps students identify their strengths, passions, and skills, and aligns them with suitable career options.' },
+    { id: 2, src: XortlistImage, alt: 'Product 2', name: 'Xortlist', description: 'Xortlist is an innovative platform designed for students who have clear goals, dreams, and aspirations, but are struggling to find opportunities to achieve them. Xortlist bridges the gap between potential and opportunity, empowering students to turn their dreams into reality. Xortlist primary objective is to provide a platform for students to access resources, opportunities, and support, helping them overcome obstacles and achieve their goals.' },
+    { id: 3, src: Doutya_RecruitImage, alt: 'Product 3', name: 'Doutya Recruit', description: 'Doutya Recruit is an innovative recruitment platform that bridges the gap between students and their dream companies. By showcasing students potential and aspirations, Doutya Recruit enables companies to discover and connect with top talent, fostering meaningful relationships and successful career paths.' },
     { id: 4, src: Doutya_EngageImage, alt: 'Product 4', name: 'Doutya Engage', description: 'Doutya Engage is an innovative learning platform that empowers students to prepare for their dream company by suggesting relevant skills to learn before joining. By bridging the skill gap, Doutya Engage ensures students hit the ground running, maximizing their potential for success.' },
 ];
 
@@ -19,13 +20,20 @@ const ProductSection = () => {
     };
 
     return (
-        <div className="h-screen flex flex-col">
+        <div className="bg-slate-950 min-h-screen flex flex-col">
+            <div className='ml-12 mt-20' data-aos="fade-up">
+                <h2 className="text-violet-800 text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 underline-animation">
+                    Our Products
+                </h2>
+            </div>
+          
             {/* Top Half: 2 Product Cards */}
-            <div className="flex-1 grid grid-cols-2 gap-4 p-4">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-10 p-16 overflow-hidden">
                 {products.slice(0, 4).map((product) => (
                     <div
                         key={product.id}
-                        className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-300 shadow-lg transition-transform transform hover:scale-105 custom-top-card"
+                        className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-300 shadow-lg transition-transform transform hover:scale-105"
+                        data-aos="fade-up"
                     >
                         <img
                             src={product.src}
@@ -45,7 +53,7 @@ const ProductSection = () => {
 
             {/* Product Details Modal */}
             {selectedProduct && (
-                <div className="fixed inset-0 bg-black-500 bg-opacity-75 flex items-center justify-center p-4">
+                <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 overflow-y-auto">
                     <div className="bg-white text-black p-8 rounded-lg w-full max-w-lg relative">
                         <button
                             onClick={() => setSelectedProduct(null)}
@@ -68,4 +76,3 @@ const ProductSection = () => {
 };
 
 export default ProductSection;
-``

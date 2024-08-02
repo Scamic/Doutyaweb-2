@@ -3,13 +3,11 @@ import React from 'react';
 const AboutUs = () => {
   return (
     <section className="bg-slate-950 text-white py-10 lg:py-20 relative overflow-hidden">
-      {/* Background shapes */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute w-56 h-56 bg-violet-400 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-0 left-1/2 transform -translate-x-1/2 animate-horizontal-blob mt-22"></div>
       </div>
 
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:justify-between relative">
-        {/* Left Section with Heading and Description */}
         <div className="w-full lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left ml-8" data-aos="fade-up">
           <h2 className="text-violet-800 text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 underline-animation">
             About Us
@@ -24,7 +22,6 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Right Section with Image */}
         <div className="lg:w-1/2 flex justify-center lg:justify-end h-78 w-76 mr-6" data-aos="fade-right" data-aos-delay="400">
           <img
             src="src/assets/pic3.jpg"

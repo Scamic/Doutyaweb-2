@@ -24,10 +24,14 @@ const HomePage = () => {
 
         {/* Right Section with Image */}
         <div className="w-full lg:w-2/5">
-        <div className="absolute w-66 h-66 bg-blue-700 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-0 left-1/2 transform -translate-x-1/2 animate-horizontal-blob mt-86 ml-30 z-10"></div>
 
 
-          <img src="src/assets/pic2.jpg" alt="Sample" className="rounded-md w-60 h-70 pl-10 lg:h-98 lg:w-92 object-cover z-30" />
+        <div className='absolute inset-0 pointer-events-none z-0'>
+        <div className="absolute w-56 h-56 bg-blue-800 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-1/4 left-1/3 transform -translate-x-1/2 animate-horizontal-blob"></div>
+        </div>
+
+
+          <img src="src/assets/pic2.jpg" alt="Sample" className="rounded-md w-60 h-70 pl-10 lg:h-98 lg:w-92 object-cover z-10" />
         </div>
       </div>
     </div>

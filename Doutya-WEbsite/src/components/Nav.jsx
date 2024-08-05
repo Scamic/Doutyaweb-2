@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Link, scroller } from 'react-scroll';
 
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,7 +17,6 @@ const NavBar = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -24,7 +24,22 @@ const NavBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    alert(`Searching for: ${searchQuery}`);
+    const sectionMap = {
+      about: 'about-section',
+      products: 'products-section',
+      careers: 'careers-section',
+      blog: 'blog-section'
+    };
+
+    const sectionId = sectionMap[searchQuery.toLowerCase()];
+    if (sectionId) {
+      scroller.scrollTo(sectionId, {
+        duration: 500,
+        smooth: true
+      });
+    } else {
+      alert(`No section found for: ${searchQuery}`);
+    }
   };
 
   return (
@@ -37,15 +52,43 @@ const NavBar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="w-full flex flex-wrap justify-around lg:w-auto lg:space-x-20">
-          <a href="#option1" className="block lg:inline-block text-gray-300 hover:text-white mt-2 lg:mt-0">Option 1</a>
-          <a href="#option2" className="block lg:inline-block text-gray-300 hover:text-white mt-2 lg:mt-0">Option 2</a>
-          <a href="#option3" className="block lg:inline-block text-gray-300 hover:text-white mt-2 lg:mt-0">Option 3</a>
-          <a href="#option4" className="block lg:inline-block text-gray-300 hover:text-white mt-2 lg:mt-0">Option 4</a>
+        <div className="w-full lg:w-auto flex justify-center lg:space-x-8">
+          <Link 
+            to="about-section" 
+            smooth={true} 
+            duration={500} 
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          >
+            Option 1
+          </Link>
+          <Link 
+            to="products-section" 
+            smooth={true} 
+            duration={500} 
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          >
+            Option 2
+          </Link>
+          <Link 
+            to="careers-section" 
+            smooth={true} 
+            duration={500} 
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          >
+            Option 3
+          </Link>
+          <Link 
+            to="blog-section" 
+            smooth={true} 
+            duration={500} 
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+          >
+            Option 4
+          </Link>
         </div>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="w-full lg:w-auto flex items-center mt-2 lg:mt-0 mr-0 lg:mr-20">
+        <form onSubmit={handleSearch} className="w-full lg:w-auto flex items-center mt-4 lg:mt-0">
           <input
             type="text"
             placeholder="Search..."

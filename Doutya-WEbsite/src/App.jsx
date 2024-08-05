@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import NavBar from "./components/Nav";
+import NavBar from './components/Nav';
 import HomePage from "./components/HomePage";
 import AboutUs from "./components/about";
-import ProductSection from './components/products'; // Ensure the correct path
+import ProductSection from './components/products';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
 import CareerSection from './components/Careers';
@@ -23,10 +23,18 @@ const App = () => {
         <div className="App">
             <NavBar />
             <HomePage />
-            <AboutUs />
-            <ProductSection />
-             <CareerSection/>
-            <Blog />
+            <div id="about-section">
+                <AboutUs />
+            </div>
+            <div id="products-section">
+                <ProductSection />
+            </div>
+            <div id="careers-section">
+                <CareerSection />
+            </div>
+            <div id="blog-section">
+                <Blog />
+            </div>
             <Footer />
         </div>
     );

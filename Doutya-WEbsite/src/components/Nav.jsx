@@ -59,7 +59,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 1
+            About Us
           </Link>
           <Link 
             to="products-section" 
@@ -67,7 +67,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 2
+            Products
           </Link>
           <Link 
             to="careers-section" 
@@ -75,7 +75,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 3
+            Careers
           </Link>
           <Link 
             to="blog-section" 
@@ -83,7 +83,7 @@ const NavBar = () => {
             duration={500} 
             className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
           >
-            Option 4
+            Blogs
           </Link>
         </div>
 

@@ -48,7 +48,7 @@ const NavBar = () => {
         {/* Logo and Title */}
         <div className="flex items-center space-x-4">
           <img src="src/assets/images-removebg-preview.png" alt="Logo" className="h-14 w-14" />
-          <span className="text-white text-xl font-bold">Doutya Tech</span>
+          <span className="text-white text-xl font-bold flex-grow">Doutya Tech</span>
         </div>
 
         {/* Navigation Links */}
@@ -57,7 +57,7 @@ const NavBar = () => {
             to="about-section" 
             smooth={true} 
             duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
           >
             About Us
           </Link>
@@ -65,7 +65,7 @@ const NavBar = () => {
             to="products-section" 
             smooth={true} 
             duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
           >
             Products
           </Link>
@@ -73,7 +73,7 @@ const NavBar = () => {
             to="careers-section" 
             smooth={true} 
             duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
           >
             Careers
           </Link>
@@ -81,7 +81,7 @@ const NavBar = () => {
             to="blog-section" 
             smooth={true} 
             duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer"
+            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
           >
             Blogs
           </Link>

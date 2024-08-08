@@ -28,63 +28,75 @@ const NavBar = () => {
       about: 'about-section',
       products: 'products-section',
       careers: 'careers-section',
-      blog: 'blog-section'
+      blog: 'blog-section',
     };
 
     const sectionId = sectionMap[searchQuery.toLowerCase()];
     if (sectionId) {
       scroller.scrollTo(sectionId, {
         duration: 500,
-        smooth: true
+        smooth: true,
       });
     } else {
-      alert(`No section found for: ${searchQuery}`);
+      alert(`No section found for: ${searchQuery}`); // Corrected syntax here
     }
   };
 
   return (
-    <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-slate-950'} transition-colors duration-300`}>
+    <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-black'} transition-colors duration-300`}>
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* Logo and Title */}
-        <div className="flex items-center space-x-4">
-          <img src="src/assets/images-removebg-preview.png" alt="Logo" className="h-14 w-14" />
-          <span className="text-white text-xl font-bold flex-grow">Doutya Tech</span>
+        <div className="flex items-center space-x-4 ml-8"> {/* Adjusted ml-8 to move it further right */}
+          <div className="relative group cursor-pointer">
+            <img
+              src="src/assets/images-removebg-preview.png"
+              alt="Logo"
+              className="h-24 w-24" /* Further increased size */
+            />
+            <span
+              className="absolute left-28 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 text-white text-xl font-bold transition-all duration-500"
+            >
+              Doutya Technologies
+            </span>
+          </div>
         </div>
 
-        {/* Navigation Links */}
-        <div className="w-full lg:w-auto flex justify-center lg:space-x-8">
-          <Link 
-            to="about-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
-          >
-            About Us
-          </Link>
-          <Link 
-            to="products-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
-          >
-            Products
-          </Link>
-          <Link 
-            to="careers-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
-          >
-            Careers
-          </Link>
-          <Link 
-            to="blog-section" 
-            smooth={true} 
-            duration={500} 
-            className="text-gray-300 hover:text-white mx-2 lg:mx-4 cursor-pointer font-bold"
-          >
-            Blogs
-          </Link>
+        {/* Navigation Links with Increased Spacing */}
+        <div className="relative">
+          <div className="relative flex space-x-30 p-2 rounded-full border-2 border-white"> {/* Adjusted space-x-12 for more spacing */}
+            <Link
+              to="about-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+            >
+              About Us
+            </Link>
+            <Link
+              to="products-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+            >
+              Products
+            </Link>
+            <Link
+              to="careers-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+            >
+              Careers
+            </Link>
+            <Link
+              to="blog-section"
+              smooth={true}
+              duration={500}
+              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+            >
+              Blogs
+            </Link>
+          </div>
         </div>
 
         {/* Search Bar */}

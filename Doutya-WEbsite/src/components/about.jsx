@@ -1,18 +1,15 @@
 import React from 'react';
+import pic3 from "../assets/pic3.jpg";
 
 const AboutUs = () => {
   return (
-    <section className="bg-slate-950 text-white py-10 lg:py-20 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-56 h-56 bg-violet-400 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-0 left-1/2 transform -translate-x-1/2 animate-horizontal-blob mt-22"></div>
-      </div>
-
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:justify-between relative">
-        <div className="w-full lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left ml-8" data-aos="fade-up">
-          <h2 className="text-violet-800 text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 underline-animation">
-            About Us
+    <section className="bg-blue-950 text-white py-10 lg:py-20 relative overflow-hidden p-6">
+      <div className="bg-black p-10 container mx-auto mb-10 px-4 flex flex-col lg:flex-row items-center lg:justify-between relative -mt-10 lg:-mt-20 rounded-7xl z-10">
+        <div className="w-full lg:w-1/2 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left ml-4 lg:ml-8">
+          <h2 className="text-white text-5xl sm:text-4xl lg:text-5xl font-bold mb-10 underline-animation ml-4 lg:ml-16">
+            About Us <br />
           </h2>
-          <div className='bg-gray-800 focus:outline-none rounded-lg border border-gray-600 pl-2 pr-2 pt-2 pb-2' data-aos="fade-up" data-aos-delay="200">  
+          <div className='bg-gray-800 focus:outline-none rounded-xl border border-gray-600 p-2 mr-4 lg:mr-10 w-[50vw] ml-24 '>
             <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-4">
               At Doutya Tech, we are committed to revolutionizing the tech landscape with innovative solutions and exceptional service. Our team of experts works tirelessly to provide top-notch software solutions that meet the needs of modern businesses. We believe in pushing boundaries and embracing new challenges to drive success and growth.
             </p>
@@ -22,14 +19,15 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:w-1/2 flex justify-center lg:justify-end h-78 w-76 mr-6" data-aos="fade-right" data-aos-delay="400">
+        <div className="lg:w-1/2 flex justify-center lg:justify-end h-78 w-76 sm:mr-20 sm:mt-10  ">
           <img
-            src="src/assets/pic3.jpg"
+            src={pic3}
             alt="About Us"
-            className="rounded-md w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover transform transition-transform duration-500 hover:scale-105"
+            className="rounded-3xl w-full max-w-[300px] ml-8 sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] object-cover transform transition-transform duration-500 hover:scale-105"
           />
         </div>
       </div>
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-black opacity-80 z-0"></div>
     </section>
   );
 };

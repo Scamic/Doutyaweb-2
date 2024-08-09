@@ -9,7 +9,7 @@ const AboutUs = () => {
           <h2 className="text-white text-5xl sm:text-4xl lg:text-5xl font-bold mb-10 underline-animation ml-4 lg:ml-16">
             About Us <br />
           </h2>
-          <div className='bg-gray-800 focus:outline-none rounded-xl border border-gray-600 p-2 mr-4 lg:mr-10 w-[50vw] ml-24 '>
+          <div className='bg-gray-800 focus:outline-none rounded-xl border border-gray-600 p-2 mr-4 lg:mr-100 w-[50vw] ml-10 lg:ml-8'>
             <p className="text-gray-300 text-base sm:text-lg lg:text-xl mb-4">
               At Doutya Tech, we are committed to revolutionizing the tech landscape with innovative solutions and exceptional service. Our team of experts works tirelessly to provide top-notch software solutions that meet the needs of modern businesses. We believe in pushing boundaries and embracing new challenges to drive success and growth.
             </p>
@@ -19,7 +19,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:w-1/2 flex justify-center lg:justify-end h-78 w-76 sm:mr-20 sm:mt-10  ">
+        <div className="lg:w-1/2 flex justify-center lg:justify-end h-78 w-76 sm:mr-20 sm:mt-10">
           <img
             src={pic3}
             alt="About Us"

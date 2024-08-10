@@ -82,15 +82,18 @@ const posts = [
     }, []);
 
     return (
-        <div className="bg-slate-950 py-24 sm:py-32 relative overflow-hidden">
+        <div className="bg-blue-950 py-24 sm:py-32 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-transparent to-black opacity-80 z-0"></div>
+            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent to-black opacity-40 z-0"></div>
+
             {/* Blob Background Behind Blog Entries */}
             {/* <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute w-56 h-56 bg-blue-700 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-0 right-1/4 ml-7 transform -translate-x-1/2 animate-horizontal-blob"></div>
             </div> */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute w-56 h-56 bg-violet-400 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-1/4 left-1/3 transform -translate-x-1/2 animate-horizontal-blob"></div>
-                <div className="absolute w-72 h-72 bg-pink-400 rounded-full mix-blend-screen filter blur-2xl opacity-60 bottom-0 mb-26 right-1/2 transform translate-x-1/2 animate-horizontal-blob"></div>
-            </div>
+            {/* <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute w-56 h-56 bg-black rounded-full mix-blend-screen filter blur-2xl opacity-60 top-1/4 left-1/3 transform -translate-x-1/2 animate-horizontal-blob"></div>
+                <div className="absolute w-72 h-72 bg-black rounded-full mix-blend-screen filter blur-2xl opacity-60 bottom-0 mb-26 right-1/2 transform translate-x-1/2 animate-horizontal-blob"></div>
+            </div> */}
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
                 <div className="mx-auto max-w-2xl lg:mx-0">

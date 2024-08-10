@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link, scroller } from 'react-scroll';
 
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [scrolling, setScrolling] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -38,37 +39,58 @@ const NavBar = () => {
         smooth: true,
       });
     } else {
-      alert(`No section found for: ${searchQuery}`); // Corrected syntax here
+      alert(`No section found for: ${searchQuery}`);
     }
   };
 
   return (
     <nav className={`p-4 ${scrolling ? 'bg-gray-800' : 'bg-black'} transition-colors duration-300`}>
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between flex-wrap">
         {/* Logo and Title */}
-        <div className="flex items-center space-x-4 ml-8"> {/* Adjusted ml-8 to move it further right */}
+        <div className="flex items-center space-x-4 ml-4 lg:ml-8">
           <div className="relative group cursor-pointer">
             <img
               src="src/assets/images-removebg-preview.png"
               alt="Logo"
-              className="h-24 w-24" /* Further increased size */
+              className="h-16 w-16 lg:h-24 lg:w-24"
             />
-            <span
-              className="absolute left-28 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 text-white text-xl font-bold transition-all duration-500"
-            >
+            <span className="absolute left-20 lg:left-28 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 text-white text-lg lg:text-xl font-bold transition-all duration-500">
               Doutya Technologies
             </span>
           </div>
         </div>
 
-        {/* Navigation Links with Increased Spacing */}
-        <div className="relative">
-          <div className="relative flex space-x-30 p-2 rounded-full border-2 border-white"> {/* Adjusted space-x-12 for more spacing */}
+        {/* Hamburger Menu for Mobile */}
+        <div className="lg:hidden">
+          <button
+            className="text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <FontAwesomeIcon icon={faBars} className="text-2xl" />
+          </button>
+        </div>
+
+        {/* Slide-in Menu */}
+        <div
+          className={`fixed top-0 left-0 h-full w-64 bg-gray-800 transform ${
+            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          } transition-transform duration-300 ease-in-out lg:hidden z-50`}
+        >
+          <div className="flex justify-end p-4">
+            <button
+              className="text-white focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ✕ {/* Close icon */}
+            </button>
+          </div>
+          <nav className="flex flex-col space-y-4 p-4">
             <Link
               to="about-section"
               smooth={true}
               duration={500}
-              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
             >
               About Us
             </Link>
@@ -76,7 +98,8 @@ const NavBar = () => {
               to="products-section"
               smooth={true}
               duration={500}
-              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
             >
               Products
             </Link>
@@ -84,7 +107,8 @@ const NavBar = () => {
               to="careers-section"
               smooth={true}
               duration={500}
-              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
             >
               Careers
             </Link>
@@ -92,15 +116,55 @@ const NavBar = () => {
               to="blog-section"
               smooth={true}
               duration={500}
-              className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+              className="text-gray-400 hover:text-white cursor-pointer font-bold"
+              onClick={() => setIsMenuOpen(false)}
             >
               Blogs
             </Link>
-          </div>
+          </nav>
+        </div>
+
+        {/* Navigation Links for Larger Screens */}
+        <div className="hidden lg:flex space-x-30 p-2 rounded-full border-2 border-white relative">
+          <Link
+            to="about-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+          >
+            About Us
+          </Link>
+          <Link
+            to="products-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+          >
+            Products
+          </Link>
+          <Link
+            to="careers-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+          >
+            Careers
+          </Link>
+          <Link
+            to="blog-section"
+            smooth={true}
+            duration={500}
+            className="text-gray-400 hover:text-white cursor-pointer font-bold px-3 py-1"
+          >
+            Blogs
+          </Link>
         </div>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="w-full lg:w-auto flex items-center mt-4 lg:mt-0">
+        <form
+          onSubmit={handleSearch}
+          className="w-full  lg:w-50 flex  mt-4 lg:mt-0"
+        >
           <input
             type="text"
             placeholder="Search..."

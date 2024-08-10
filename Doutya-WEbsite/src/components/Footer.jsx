@@ -3,13 +3,10 @@ import 'aos/dist/aos.css';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white py-16 px-6 relative overflow-hidden">
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 opacity-50 pointer-events-none animate-pulse"></div>
-
+        <footer className="bg-black text-white py-16 px-6 relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute w-56 h-56 bg-purple-600 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/5 animate-blob"></div>
+                <div className="absolute w-56 h-56 bg-blue-600 rounded-full mix-blend-screen filter blur-2xl opacity-60 top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/5 animate-blob"></div>
             </div>
 
             <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-start relative z-10">
@@ -62,13 +59,6 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Decorative Waves */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-                <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320">
-                    <path fill="#ffffff" fillOpacity="1" d="M0,96L60,96C120,96,240,96,360,112C480,128,600,160,720,181.3C840,203,960,213,1080,218.7C1200,224,1320,224,1380,224L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-                </svg>
-            </div>
-
             {/* Footer Bottom */}
             <div className="text-center mt-10 text-sm relative z-10">
                 <p data-aos="fade-up" data-aos-delay="2600">
@@ -80,3 +70,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
